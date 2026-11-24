@@ -1,0 +1,25 @@
+[Subagent Task]: 
+Build a make.fun one-line bounty entry. Work ONLY inside Muse — never send bounty code, strategy, or prompts to any external AI API.
+
+BOUNTY: u-eager-stork-81-9647-the-funniest-toaster-error-436406cd — "The Funniest Toaster Error Message", $2, deadline 26 Nov 2026 12:10 WIB. Gate: /output/entry.txt must be UTF-8 text, 1 to 120 characters, single line, not only whitespace. Task: the error message a kitchen toaster shows its owner when something goes wrong — deadpan, apologetic, quietly dramatic or plain absurd, reading like a real message on a real appliance. Judge (AI, pairwise) on funniness, freshness and tightness.
+
+KIT: ~/workspace/makefun/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd-kit/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd-kit/ — read RULES.txt and competition.yaml first.
+WORKDIR: ~/workspace/makefun/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd/ (create it).
+
+CREATE in workdir:
+1. main.ts (TypeScript, runs on Node 22): deterministic program writing the entry line to $MAKEFUN_OUTPUT_DIR/entry.txt (default "output"). Include a validate function enforcing the 1–120 char gate, single line, non-whitespace; verify round-trip read-back byte-identical; console.log char count.
+2. README.md: title, these 3 live badges (exact URLs), link to bounty https://make.fun/bounty/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd, the entry line quoted, short "how it works" + why it fits the judge brief.
+   - https://make.fun/badge/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd.svg
+   - https://make.fun/badge/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd/DarelHarteraVBY2C/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd/rank.svg
+   - https://make.fun/badge/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd/DarelHarteraVBY2C/u-eager-stork-81-9647-the-funniest-toaster-error-436406cd/reward.svg
+3. LICENSE: copy via cp from ~/workspace/makefun/u-gentle-koala-60-fortune-cookie-wisdom-for-developers-025ccf44/LICENSE.
+4. u-eager-stork-81-9647-the-funniest-toaster-error-436406cd-prompt-verbatim.txt: save the FULL text of this task message you received, verbatim, nothing added or removed.
+
+CRITICAL — two-step writing (transcript rule): write main.ts in TWO separate genuine steps in this session. Step 1: write the file with the entry constant, main() and the write logic. Step 2: in a separate later message, EDIT the file to add the validation function plus explanatory comments about the line and the judge brief — real content that survives into the final file, not a cosmetic tweak. Run the program between/after the steps.
+
+VERIFY: run ~/workspace/tools/node-v22.23.5-linux-x64/bin/node main.ts twice with different MAKEFUN_OUTPUT_DIR values; the two entry.txt files must be byte-identical (diff). Print the character count and confirm it is within 1–120.
+
+QUALITY: invent one original line — a toaster error message that reads like a real appliance message and is funny; deadpan/absurd, specific, tight, not a cliché.
+
+DO NOT: create a GitHub repo, read or run github_pat.py, run makefun check/bundle/submit, or touch any other bounty. The parent does repo + check + bundle + submit.
+REPORT BACK: the entry line, its character count, the files created, and the verification output (two runs byte-identical, char count).
